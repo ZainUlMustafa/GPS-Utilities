@@ -73,7 +73,12 @@ def process_gpx(file_path, output_file_path, distance_threshold=5):
     export_filtered_gpx(filtered_points, output_file_path)
 #enddef
 
-gpx_file_path = 'data/5734459.gpx'
-output_file_path = 'data/5734459-filtered_output.gpx'
+# filename = '22-00003846'
+# filename = '5734459'
+# input_gpx_file = f'data/{filename}.gpx'
+# output_gpx_file = f'data/{filename}-dbs-filtered.gpx'
 
-process_gpx(gpx_file_path, output_file_path, distance_threshold=300)
+gpx_file_path = 'data/22-00003846.gpx'
+output_file_path = 'data/22-00003846-filtered_output.gpx'
+
+process_gpx(gpx_file_path, output_file_path, distance_threshold=0)
