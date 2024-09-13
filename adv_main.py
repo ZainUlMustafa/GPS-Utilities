@@ -94,6 +94,7 @@ def filter_abnormal_speed(points, speed_threshold=50):  # Threshold in km/h
                             (points[i]['latitude'], points[i]['longitude'])).km
         if time_diff > 0:  # Avoid division by zero
             speed = distance / time_diff
+            print(speed)
             if speed < speed_threshold:
                 filtered_points.append(points[i])
     return filtered_points
@@ -130,9 +131,9 @@ def process_gpx_with_filters(input_file, output_file, num_samples=10, angle_thre
         print("No snapped coordinates returned.")
 
 # Example usage
-filename = '22-00003892'
+filename = '22-00003897'
 # filename = '5734459'
 input_gpx_file = f'data/{filename}.gpx'
 output_gpx_file = f'data/{filename}-snap-filtered.gpx'
 
-process_gpx_with_filters(input_gpx_file, output_gpx_file)
+process_gpx_with_filters(input_gpx_file, output_gpx_file, 50)
